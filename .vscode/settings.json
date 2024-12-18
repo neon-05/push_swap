@@ -1,0 +1,10 @@
+{
+	"C_Cpp.errorSquiggles": "disabled",
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/home/neon-05/42_push-swap",
+			"binaryPath": "/home/neon-05/42_push-swap/push_swap",
+			"binaryArgs": []
+		}
+	]
+}

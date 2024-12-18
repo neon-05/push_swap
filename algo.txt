@@ -1,11 +1,28 @@
-1.	rb while sb[0] != target[0] and sb[0]->next
-2.	pa if sb[0] == target[0]
-3.	ra if sa[0] == target[0]
+1.	rb while sb != target[i] and sb->next
+2.	pa if sb == target[i]
+3.	ra if sa == target[i]
 4.	pb else
-5.	ra if sa[0] == target[0]
+5.	ra if sa == target[i]
 6.	rc
 7.	i++
-8.	1. so i < len * 2
+8.	(1.) if i < len * 2
+
+-1.
+a |	1 0 
+b |	
+t |	0 1 
+
+0.
+a |	0 
+b |	1 
+t |	1 0 
+
+1.
+a |	0 1 
+b |	
+t |	0 1 
+
+ra
 
 
 -1.

@@ -7,7 +7,7 @@ NAME = push_swap
 LIBDIR = libft
 LIB = $(LIBDIR)/libft.a
 
-SRC = main.c
+SRC = main.c stacks.c
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
