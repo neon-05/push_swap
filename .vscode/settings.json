@@ -6,5 +6,8 @@
 			"binaryPath": "/home/neon-05/42_push-swap/push_swap",
 			"binaryArgs": []
 		}
-	]
+	],
+	"files.associations": {
+		"libft.h": "c"
+	}
 }

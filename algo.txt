@@ -1,11 +1,11 @@
 1.	rb while sb != target[i] and sb->next
 2.	pa if sb == target[i]
 3.	ra if sa == target[i]
-4.	pb else
+4.	pb if sa != target[i]
 5.	ra if sa == target[i]
-6.	rc
-7.	i++
-8.	(1.) if i < len * 2
+6.	i++
+7.	(1.) if i < len * 2
+
 
 -1.
 a |	1 0 
@@ -21,8 +21,6 @@ t |	1 0
 a |	0 1 
 b |	
 t |	0 1 
-
-ra
 
 
 -1.
@@ -47,7 +45,7 @@ t |	3 0 1 2
 
 
 -1.
-a |	4 8 6 2 0 1 9 7 3 5 
+a |	ft_lstsize(stack_b) 
 b |	
 t |	0 1 2 3 4 5 6 7 8 9 
 

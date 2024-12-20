@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:33:51 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/18 23:52:56 by ylabussi         ###   ########.fr       */
+/*   Updated: 2024/12/20 02:53:40 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,30 @@ int	search_stack(t_list *lst, int target)
 void	stack_sorting(t_list *stack_a, t_list *stack_b, int *arr_t, size_t len)
 {
 	size_t	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	while (i < len * 2)
 	{
-		while (stack_b && *(int *) stack_b->content != arr_t[i % len] && stack_b->next)
+		j = 0;
+		k = ft_lstsize(stack_b) % len;
+		while (stack_b && *(int *) stack_b->content != arr_t[i % len] && j < k)
 		{
 			stack_rot(&stack_b);
-			ft_putendl_fd("rb", 1);
+			j++;
 		}
+		while (0 < j && j < k)
+			if (j > k / 2)
+			{
+				j++;
+				ft_putendl_fd("rrb", 1);
+			}
+			else
+			{
+				j--;
+				ft_putendl_fd("rb", 1);
+			}
 		if (stack_b && *(int *) stack_b->content == arr_t[i % len])
 		{
 			stack_push(&stack_b, &stack_a);
@@ -108,7 +123,7 @@ void	stack_sorting(t_list *stack_a, t_list *stack_b, int *arr_t, size_t len)
 			stack_rot(&stack_a);
 			ft_putendl_fd("ra", 1);
 		}
-		else
+		if (*(int *) stack_a->content != arr_t[i % len] && i < len)
 		{
 			stack_push(&stack_a, &stack_b);
 			ft_putendl_fd("pb", 1);

@@ -6,7 +6,7 @@
 /*   By: ylabussi <ylabussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:03:35 by ylabussi          #+#    #+#             */
-/*   Updated: 2024/12/18 23:58:53 by ylabussi         ###   ########.fr       */
+/*   Updated: 2024/12/20 00:42:55 by ylabussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ void	stack_rot(t_list **lst)
 	if (*lst && (*lst)->next)
 	{
 		tmp = (*lst)->next;
-		ft_putendl_fd("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 1);
-		ft_lstlast(*lst)->next = *lst;
 		(*lst)->next = NULL;
+		ft_lstadd_back(&tmp, *lst);
 		*lst = tmp;
 	}
 }
@@ -33,7 +32,8 @@ void	stack_push(t_list **lst_from, t_list **lst_to)
 	if (lst_from && lst_to)
 	{
 		tmp = *lst_from;
-		lst_from = &(*lst_from)->next;
+		*lst_from = (*lst_from)->next;
+		tmp->next = NULL;
 		ft_lstadd_front(lst_to, tmp);
 	}
 }
